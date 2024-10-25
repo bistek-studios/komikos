@@ -1,5 +1,23 @@
 {
-  "dependencies": {
-    "express": "^4.21.1"
-  }
+  "name": "komikos",
+  "version": "0.1.1",
+  "description": "goofy nodejs server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "server",
+    "static"
+  ],
+  "author": "bistek",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bistek-studios/komikos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bistek-studios/komikos/issues"
+  },
+  "homepage": "https://github.com/bistek-studios/komikos#readme"
 }
