@@ -5,7 +5,14 @@ var path = require('path');
 
 const komikos = (port,templatePath,callback) => {
     http.createServer(function(req, res) {
-        var stream = fs.createReadStream(path.join(templatePath, req.url));
+    	let requestedFile = req.url;
+    	if (requestedFile == "/") {
+    		requestedFile = "index.html";
+    	};
+    	if (fs.existsSync(path.join(templatePath, requestedFile+".html"))) {
+    		requestedFile = requestedFile + ".html";
+    	};
+        var stream = fs.createReadStream(path.join(templatePath, requestedFile));
         stream.on('error', function() {
             if (fs.existsSync(path.join(templatePath, "404.html"))) {
                 fs.createReadStream(path.join(templatePath, "404.html")).pipe(res);
