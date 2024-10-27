@@ -12,6 +12,7 @@ const komikos = (port,templatePath,callback) => {
     	if (fs.existsSync(path.join(templatePath, requestedFile+".html"))) {
     		requestedFile = requestedFile + ".html";
     	};
+        console.log(`${req.method} ${requestedFile}`)
         var stream = fs.createReadStream(path.join(templatePath, requestedFile));
         stream.on('error', function() {
             if (fs.existsSync(path.join(templatePath, "404.html"))) {
@@ -22,7 +23,10 @@ const komikos = (port,templatePath,callback) => {
             }
         });
         stream.pipe(res);
-    }).listen((port), callback);
+    }).listen((port), ()=>{
+        console.log(`Server started. Hosted on localhost:${port}`);
+        callback();
+    });
 }
 
 module.exports = komikos

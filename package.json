@@ -1,10 +1,11 @@
 {
   "name": "komikos",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "goofy nodejs server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node server.js",
+    "test": "echo fard"
   },
   "keywords": [
     "server",
